@@ -124,10 +124,9 @@ $ npm start
 ## Funcionalidades da aplicação
 
 <div align=right>
+	<h4>V 1.36</h4>
 
-## V 1.36
 </div>
-
 
 ### Fluxo Comum
 
