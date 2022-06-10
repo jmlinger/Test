@@ -119,10 +119,15 @@ $ npm start
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
 ```
+<br>
 
 ## Funcionalidades da aplicação
 
+<div align=right>
+
 ## V 1.36
+</div>
+
 
 ### Fluxo Comum
 
@@ -136,12 +141,14 @@ Barra de navegação:
 - [x] Guias.
 - [x] Alteração de tema visual.
 - [x] Logout.
+<br></br>
 
 ### Fluxo do Administrador
 
 Tela de Gerenciamento de Usuários (/admin/manage):
 - [x] Cadastro de novos usuários.
 - [x] Deleção de usuário.
+<br></br>
 
 ### Fluxo do Vendedor
 
@@ -153,6 +160,7 @@ Tela de Pedidos (/seller/orders):
 Tela de Detalhes/Controle do Pedido (/seller/orders/:id):
 - [x] Exibe os detalhes do pedido.
 - [x] Alteração de status do pedido.
+<br></br>
 
 ### Fluxo do Cliente
 
