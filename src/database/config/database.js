@@ -11,14 +11,14 @@ const suffix = {
 };
 
 const options = {
-  host: process.env.MYSQL_HOST || 'mysql',
-  port: process.env.MYSQL_PORT || '3306',
+  host: process.env.SQL_HOST || 'localhost',
+  port: process.env.SQL_PORT || '3306',
   database: process.env.USE_HEROKU_DB 
-    ? process.env.MYSQL_DATABASE   
-    :`${process.env.MYSQL_DB_NAME || 'delivery-app'}${suffix[environment] || suffix.test}`,
-  username: process.env.MYSQL_USER || 'root',
-  password: process.env.MYSQL_PASSWORD || 'password',
-  dialect: 'mysql',
+    ? process.env.SQL_DATABASE   
+    :`${process.env.SQL_DB_NAME || 'delivery-app'}${suffix[environment] || suffix.test}`,
+  username: process.env.SQL_USER || 'root',
+  password: process.env.SQL_PASSWORD || 'password',
+  dialect: 'postgres',
   dialectOptions: {
     timezone: 'Z',
   },
