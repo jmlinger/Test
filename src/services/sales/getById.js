@@ -4,8 +4,8 @@ const Models = require('../../database/models');
 
 const attributes = {
     include: [
-      [sequelize.fn('DATE_FORMAT',
-       sequelize.col('sale_date'), '%d/%m/%Y'), 'saleDate'],
+      [sequelize.fn('to_char',
+       sequelize.col('sale_date'), 'dd/mm/yy'), 'saleDate'],
     ],
   };
 
