@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 
 module.exports = (err, _req, res, _next) => {
-
+  console.log(err);
   if (err.message === 'jwt expired') {
     return res.status(StatusCodes.UNAUTHORIZED).send(err.message);
   }
