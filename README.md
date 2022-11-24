@@ -50,7 +50,7 @@ Aplicação desenvolvida como forma de critério avaliativo da escola de tecnolo
 
 # A aplicação em nuvem
 
-Acesse a aplicação alocada no Heroku por <a href="https://in-tregasdelivery.herokuapp.com/"> aqui <a/>.
+Acesse a aplicação alocada no Vercel por <a href="https://intreguedelivery.vercel.app"> aqui <a/>.
 
 <br>  
 
@@ -78,13 +78,14 @@ $ npm install
 
 ## Crie um arquivo .env
 
-- NODE_ENV=
-- MYSQL_HOST=localhost
-- MYSQL_PORT=3306
-- MYSQL_USER=(seu usuário mysql)
-- MYSQL_PASSWORD=(sua senha mysql)
-- MYSQL_DB_NAME=delivery-app
-- EVAL_ALWAYS_RESTORE_DEV_DB=true
+- NODE_ENV=dev
+- PORT=3001
+- JWT_SECRET=grupo21senhasecreta
+- SQL_HOST=localhost
+- SQL_PORT=3306
+- SQL_USER=(seu usuário mysql)
+- SQL_PASSWORD=(sua senha mysql)
+- SQL_DB_NAME=delivery-app
 	
 # Execute a aplicação
 $ npm run start
@@ -109,8 +110,8 @@ $ npm install
 ## Crie um arquivo .env
 
 - REACT_APP_NODE_ENV=dev
-- REACT_APP_API=https://in-tregasbackend.herokuapp.com/
-- REACT_APP_LOCALHOST=http://localhost:3001/
+- REACT_APP_API=https://intreguedelivery.vercel.app/
+- REACT_APP_LOCALHOST=http://localhost:3000/
 - SKIP_PREFLIGHT_CHECK=true	
 	
 # Execute a aplicação em modo de desenvolvimento
@@ -184,6 +185,21 @@ Tela de Detalhes do Pedido (/customer/orders/:id):
 - [x] Alteração de status do pedido.
 <br><br>
 
+## Login
+A aplicação contém em seu banco de dados três usuários padrão. Para logar em uma destas contas basta copiar o conteúdo entre aspas e colar nos respectivos campos. Segue:
+### Administrador
+- email: "adm@deliveryapp.com"
+- senha: "--adm2@21!!--"
+
+### Vendedor
+- email: "fulana@deliveryapp.com"
+- senha: "fulana@123"
+
+### Cliente
+- email: "zebirita@email.com"
+- senha: "$#zebirita#$"
+<br><br>
+
 ## Desenvolvido por:
 
 Gustavo Mourão - https://github.com/Gustavo-Mourao
@@ -199,5 +215,5 @@ José Luis Demeneghi - https://github.com/Joseluisdemeneghi
 ## Status
 
 <h3> 
-	🚧  Implementando novas funcionalidades  🚧
+	🚧  Finalizado!  🚧
 </h3>
