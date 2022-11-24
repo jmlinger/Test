@@ -10,6 +10,11 @@
     {
       "src": "./src/api",
       "dest": "./src/api/server.js"
+    },
+    {
+      "src": "./src/api",
+      "methods": ["GET","POST"],
+      "dest": "./src/api/server.js"
     }
   ]
 }
