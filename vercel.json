@@ -2,7 +2,7 @@
   "name": "delivery-app-back-end",
   "version": 2,
   "public": true,
-  "build": [
+  "builds": [
     {
       "src": "./src/api/server.js",
       "use": "@vercel/node"
