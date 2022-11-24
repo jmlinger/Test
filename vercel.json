@@ -1,5 +1,7 @@
 {
+  "name": "delivery-app-back-end",
   "version": 2,
+  "public": true,
   "build": [
     {
       "src": "./src/api/server.js",
