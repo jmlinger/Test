@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import SellerOrderDetailsTable from '../../components/sellers/SellerOrderDetailsTable';
-import { getOrderById } from '../../services/apiCalls';
+import { apiGetOrderById } from '../../services/apiCalls';
 import {
   DetailsOrderDiv,
   InfoOrderDeshboard,
@@ -19,7 +19,7 @@ export default function OrderDetails() {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await getOrderById(params.id);
+      const response = await apiGetOrderById(params.id);
       if (response.error) {
         console.log(response.error);
       } else {

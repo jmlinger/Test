@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
-import { serverUrl } from './dinamcsRoutes';
+import { backUri } from './dynamicRoutes';
 
-const client = io(serverUrl);
+const client = io(backUri);
 
 export default client;

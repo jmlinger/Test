@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import StatusOrder from '../../components/customers/StatusOrder';
 import Navbar from '../../components/Navbar';
-import { getOrdersByUser } from '../../services/apiCalls';
+import { apiGetOrdersByUser } from '../../services/apiCalls';
 import {
   DivAllOrders,
   IdDivOrder,
@@ -17,7 +17,7 @@ export default function SellerOrders() {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await getOrdersByUser();
+      const response = await apiGetOrdersByUser();
       if (response.error) {
         console.log(response.error);
       } else {

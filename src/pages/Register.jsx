@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { registerValidation } from '../utils/inputValidations';
-import { apiRegister } from '../services/apiCalls';
+import { apiCreateUser } from '../services/apiCalls';
 import {
   LoguinDiv,
   LogoDoApp,
@@ -36,7 +36,7 @@ export default function RegisterUser() {
   }
 
   const sendRegister = async () => {
-    const response = await apiRegister(newUser);
+    const response = await apiCreateUser(newUser);
     if (response.error) {
       setHiddenOn(false);
     } else {

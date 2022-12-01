@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getProducts } from '../../services/apiCalls';
+import { apiGetProducts } from '../../services/apiCalls';
 import StyledList from '../../styles/productSytyle/productListStyle';
 import {StyleDivProduct} from '../../styles/productSytyle/ProductStyle';
 import ProductCard from './ProductCard';
@@ -9,7 +9,7 @@ export default function ProductList() {
 
   useEffect(() => {
     const get = async () => {
-      const response = await getProducts();
+      const response = await apiGetProducts();
 
       setProducts(response);
     };

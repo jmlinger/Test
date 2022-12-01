@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import OrderDetailsTable from '../../components/customers/OrderDetailsTable';
 import Navbar from '../../components/Navbar';
 import socket from '../../utils/socketClient';
-import { getOrderById } from '../../services/apiCalls';
+import { apiGetOrderById } from '../../services/apiCalls';
 import { TotalDiv } from '../../styles/tablestyles/Checkout';
 import {
   DetailsOrderDiv,
@@ -19,7 +19,7 @@ export default function OrderDetails() {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await getOrderById(params.id);
+      const response = await apiGetOrderById(params.id);
       if (response.error) {
         console.log(response.error);
       } else {

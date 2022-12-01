@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
 import { registerValidation } from '../../utils/inputValidations';
-import { apiRegisterByAdmin, getUsers, removeUser } from '../../services/apiCalls';
+import { apiCreateUserByAdmin, apiGetUsers, apiRemoveUser } from '../../services/apiCalls';
 
 import ManagementUsersTable from '../../components/adm/ManagementUsersTable';
 import { DashboardAdm, MainDashboarDiv } from '../../styles/admStyles/admStyles';
@@ -21,7 +21,7 @@ export default function Management() {
   };
 
   const apiCall = async () => {
-    const response = await getUsers();
+    const response = await apiGetUsers();
     if (response.error) {
       console.log(response.error);
     } else {
@@ -40,7 +40,7 @@ export default function Management() {
   }
 
   const sendRegister = async () => {
-    const response = await apiRegisterByAdmin(newUser);
+    const response = await apiCreateUserByAdmin(newUser);
     if (response.error) {
       hiddenOnSet(false);
     } else {
@@ -55,7 +55,7 @@ export default function Management() {
   };
 
   const deleteUser = async (id) => {
-    await removeUser(id);
+    await apiRemoveUser(id);
     await apiCall();
   };
 

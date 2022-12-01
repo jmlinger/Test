@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { serverUrl, serverUrlFront } from '../utils/dinamcsRoutes';
+import { backUri, frontUri } from '../utils/dynamicRoutes';
 
 const globalApiVariables = () => {
   const { id: userId, token } = JSON.parse(localStorage.getItem('user'));
@@ -12,17 +12,17 @@ const globalApiVariables = () => {
   return { userId, config };
 }
 
-const expireTokenCaseError = ({ message }) => {
+const invalidTokenCaseError = ({ message }) => {
   if (message === 'Request failed with status code 401') {
     localStorage.clear()
 
-    return window.location.replace(serverUrlFront)
+    return window.location.replace(frontUri)
   }
 }
 
 const apiLogin = async (user) => {
   try {
-    const url = `${serverUrl}login`;
+    const url = `${backUri}login`;
     const fetchApi = await axios.post(url, user);
     const response = await fetchApi.data;
 
@@ -32,9 +32,9 @@ const apiLogin = async (user) => {
   }
 }
 
-const apiRegister = async (newUser) => {
+const apiCreateUser = async (newUser) => {
   try {
-    const url = `${serverUrl}register`;
+    const url = `${backUri}register`;
 
     const fetchApi = await axios.post(url, newUser);
     const response = await fetchApi.data;
@@ -45,10 +45,10 @@ const apiRegister = async (newUser) => {
   }
 }
 
-const getProducts = async () => {
+const apiGetProducts = async () => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}customer/products`;
+    const url = `${backUri}customer/products`;
 
     const fetchApi = await axios.get(url, config);
     const response = await fetchApi.data;
@@ -56,115 +56,123 @@ const getProducts = async () => {
     return response;
   } catch (error) {
     console.log(error)
-    return expireTokenCaseError(error);
+    invalidTokenCaseError(error);
+    return { error };
   }
 };
 
-const getOrdersByUser = async () => {
+const apiGetOrdersByUser = async () => {
   try {
     const { userId, config } = globalApiVariables();
-    const url = `${serverUrl}customer/order/${userId}`;
+    const url = `${backUri}customer/order/${userId}`;
 
     const fetchAPI = await axios.get(url, config);
     const response = await fetchAPI.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const getOrderById = async (id) => {
+const apiGetOrderById = async (id) => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}customer/order/sales/${id}`;
+    const url = `${backUri}customer/order/sales/${id}`;
 
     const fetchAPI = await axios.get(url, config);
     const response = await fetchAPI.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const getSellers = async () => {
+const apiGetSellers = async () => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}register`;
+    const url = `${backUri}register`;
     const fetchAPI = await axios.get(url, config);
     const response = await fetchAPI.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const createOrder = async (order) => {
+const apiCreateOrder = async (order) => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}customer/order`;
+    const url = `${backUri}customer/order`;
 
     const fetchAPI = await axios.post(url, order, config);
     const response = await fetchAPI.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const apiRegisterByAdmin = async (newUser) => {
+const apiCreateUserByAdmin = async (newUser) => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}adminRegister`;
+    const url = `${backUri}adminRegister`;
 
     const fetchAPI = await axios.post(url, newUser, config);
     const response = await fetchAPI.data;
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const getUsers = async () => {
+const apiGetUsers = async () => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}adminRegister`;
+    const url = `${backUri}adminRegister`;
 
     const fetchApi = await axios.get(url, config);
     const response = await fetchApi.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
-const removeUser = async (id) => {
+const apiRemoveUser = async (id) => {
   try {
     const { config } = globalApiVariables();
-    const url = `${serverUrl}adminRegister/${id}`;
+    const url = `${backUri}adminRegister/${id}`;
 
     const fetchApi = await axios.post(url, config);
     const response = await fetchApi.data;
 
     return response;
   } catch (error) {
+    invalidTokenCaseError(error);
     return { error };
   }
 };
 
 export {
   apiLogin,
-  apiRegister,
-  getProducts,
-  getOrdersByUser,
-  getOrderById,
-  getSellers,
-  createOrder,
-  apiRegisterByAdmin,
-  getUsers,
-  removeUser,
+  apiCreateUser,
+  apiGetProducts,
+  apiGetOrdersByUser,
+  apiGetOrderById,
+  apiGetSellers,
+  apiCreateOrder,
+  apiCreateUserByAdmin,
+  apiGetUsers,
+  apiRemoveUser,
 };

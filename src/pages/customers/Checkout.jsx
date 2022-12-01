@@ -10,7 +10,7 @@ import {
   AddressDiv,
 } from '../../styles/tablestyles/Checkout';
 
-import { createOrder, getSellers } from '../../services/apiCalls';
+import { apiCreateOrder, apiGetSellers } from '../../services/apiCalls';
 import { changeSubtotalList } from '../../redux/slice/productCart';
 
 export default function Checkout() {
@@ -35,7 +35,7 @@ export default function Checkout() {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await getSellers();
+      const response = await apiGetSellers();
       if (response.error) {
         console.log(response.error);
       } else {
@@ -54,7 +54,7 @@ export default function Checkout() {
   };
 
   const sendOrder = async () => {
-    const orderDispatched = await createOrder({
+    const orderDispatched = await apiCreateOrder({
       ...order,
       productsSold: productsSold.map(({ id: productId, quantity }) => ({ productId, quantity })),
     });

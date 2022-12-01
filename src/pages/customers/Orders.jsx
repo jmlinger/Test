@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
-import { getOrdersByUser } from '../../services/apiCalls';
+import { apiGetOrdersByUser } from '../../services/apiCalls';
 import socket from '../../utils/socketClient';
 import {
   DivAllOrders, 
@@ -17,7 +17,7 @@ export default function Orders() {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await getOrdersByUser();
+      const response = await apiGetOrdersByUser();
       if (response.error) {
         console.log(response.error);
       } else {
