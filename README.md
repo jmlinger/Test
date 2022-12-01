@@ -2,6 +2,7 @@
 <br>
 
 # Descrição
+
 E-commerce para bebidas alcoólicas.
 
 Projeto fullstack desenvolvido em React e Node.js que apresenta funcionalidades para três tipos de usuário: administrador, vendedor e cliente.
@@ -52,9 +53,10 @@ Aplicação desenvolvida como forma de critério avaliativo da escola de tecnolo
 
 Acesse a aplicação alocada no Heroku por <a href="https://in-tregasdelivery.herokuapp.com/"> aqui <a/>.
 
-<br>  
+<br>
 
 # Rodando a aplicação localmente
+
 ## Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -79,20 +81,21 @@ $ npm install
 ## Crie um arquivo .env
 
 - NODE_ENV=
-- MYSQL_HOST=localhost
-- MYSQL_PORT=3306
-- MYSQL_USER=(seu usuário mysql)
-- MYSQL_PASSWORD=(sua senha mysql)
-- MYSQL_DB_NAME=delivery-app
+- SQL_HOST=localhost
+- SQL_PORT=3306
+- SQL_USER=(seu usuário mysql)
+- SQL_PASSWORD=(sua senha mysql)
+- SQL_DB_NAME=delivery-app
 - EVAL_ALWAYS_RESTORE_DEV_DB=true
-	
+
 # Execute a aplicação
 $ npm run start
 
 # O servidor inciará na porta:3001 - acesse <http://localhost:3001>
 
 ```
-### Rodando o Front-End 
+
+### Rodando o Front-End
 
 ```bash
 # Clone este repositório com a chave SSH ou HTTP a depender de como seu git está configurado.
@@ -111,14 +114,15 @@ $ npm install
 - REACT_APP_NODE_ENV=dev
 - REACT_APP_API=https://in-tregasbackend.herokuapp.com/
 - REACT_APP_LOCALHOST=http://localhost:3001/
-- SKIP_PREFLIGHT_CHECK=true	
-	
+- SKIP_PREFLIGHT_CHECK=true
+
 # Execute a aplicação em modo de desenvolvimento
 $ npm start
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
 ```
+
 <br>
 
 ## Funcionalidades da aplicação
@@ -131,58 +135,68 @@ $ npm start
 ### Fluxo Comum
 
 Tela de login (/login):
+
 - [x] Login.
 
 Tela de registro (/register):
+
 - [x] Cadastro de usuário.
 
 Barra de navegação:
+
 - [x] Guias.
 - [x] Alteração de tema visual.
 - [x] Logout.
-<br></br>
+      <br></br>
 
 ### Fluxo do Administrador
 
 Tela de Gerenciamento de Usuários (/admin/manage):
+
 - [x] Cadastro de novos usuários.
 - [x] Deleção de usuário.
-<br></br>
+      <br></br>
 
 ### Fluxo do Vendedor
 
 Tela de Pedidos (/seller/orders):
+
 - [x] Exibe todos os pedidos do vendedor.
 - [x] Acesso aos detalhes do pedido ao clicar no card.
 - [x] Atualização status do pedido em tempo real.
 
 Tela de Detalhes/Controle do Pedido (/seller/orders/:id):
+
 - [x] Exibe os detalhes do pedido.
 - [x] Alteração de status do pedido.
-<br></br>
+      <br></br>
 
 ### Fluxo do Cliente
 
 Tela de Produtos (/customer/orders):
+
 - [x] Exibe todos os produtos.
 - [x] Exibe/oculta o valor total da compra no carrinho ao inserir/excluir produtos.
 - [x] Altera o valor do carrinho ao alterar quantidade de um produto.
 - [x] Acesso à finalização da compra ao clicar no carrinho.
 
 Tela de Checkout
+
 - [x] Exibe detalhes do pedido.
 - [x] Remoção de produto do pedido.
 - [x] Inserção de informações para a entrega.
 
 Tela de Pedidos (/customer/orders):
+
 - [x] Exibe todos os pedidos do cliente.
 - [x] Acessa os detalhes do pedido ao clicar no card.
 - [x] Atualização status do pedido em tempo real.
 
 Tela de Detalhes do Pedido (/customer/orders/:id):
+
 - [x] Exibe os detalhes do pedido.
 - [x] Alteração de status do pedido.
-<br><br>
+      <br><br>
 
 ## Desenvolvido por:
 
