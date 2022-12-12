@@ -6,7 +6,7 @@ module.exports = {
           name: 'Delivery App Admin',
           email: 'adm@deliveryapp.com',
           password: 'a4c86edecc5aee06eff8fdeda69e0d04',
-          role: 'administrator',
+          role: 'admin',
         },
         {
           name: 'Fulana Pereira',
