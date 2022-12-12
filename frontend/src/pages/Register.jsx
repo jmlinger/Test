@@ -3,14 +3,14 @@ import { Redirect } from 'react-router-dom';
 import { registerValidation } from '../utils/inputValidations';
 import { apiCreateUser } from '../services/apiCalls';
 import {
-  LoguinDiv,
+  LoginDiv,
   LogoDoApp,
   InputsDiv,
-  DivButonsLoguin,
+  DivButtonsLogin,
   Inputs,
-  ButonsRegister,
+  ButtonsRegister,
   ToLoginPageButton,
-} from '../styles/login/Loguinstyles';
+} from '../styles/login/LoginStyles';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -52,7 +52,7 @@ export default function RegisterUser() {
   })
 
   return (
-    <LoguinDiv>
+    <LoginDiv>
       <InputsDiv transition={transition}>
        <LogoDoApp/>
         { redirectOn ? <Redirect to="/customer/products" /> : null }
@@ -91,15 +91,15 @@ export default function RegisterUser() {
             Email já cadastrado.
           </p>
         </div>
-        <DivButonsLoguin>
-          <ButonsRegister
+        <DivButtonsLogin>
+          <ButtonsRegister
             type="submit"
             disabled={ switchDisabledButton() }
             onClick={ () => sendRegister() }
             data-testid="common_register__button-register"
           >
             Criar Conta
-          </ButonsRegister>
+          </ButtonsRegister>
           <Link to="/">
             <ToLoginPageButton
               type="button"
@@ -108,8 +108,8 @@ export default function RegisterUser() {
                 Já tenho conta
             </ToLoginPageButton>
           </Link>
-        </DivButonsLoguin>
+        </DivButtonsLogin>
       </InputsDiv>
-    </LoguinDiv>
+    </LoginDiv>
   );
 }

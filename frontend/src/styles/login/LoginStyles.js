@@ -10,7 +10,7 @@ body {
 }
 `;
 
-export const LoguinDiv = styled.div`
+export const LoginDiv = styled.div`
   background-image: url(${backgroudCerveja});
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -115,14 +115,14 @@ export const LogoDoApp = styled.div`
   }
 `;
 
-export const DivButonsLoguin = styled.div`
+export const DivButtonsLogin = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `
 
-export const ButonsSend = styled.button`
+export const ButtonsSend = styled.button`
   border-style: none;
   width: 50%;
   height: 50px;
@@ -152,11 +152,11 @@ export const ButonsSend = styled.button`
     }
 `;
 
-export const ButonsRegister = styled(ButonsSend)`
+export const ButtonsRegister = styled(ButtonsSend)`
   width: 100%;
 `;
 
-export const ToLoginPageButton = styled(ButonsSend)`
+export const ToLoginPageButton = styled(ButtonsSend)`
   width: 100%;
   margin: 0;
 `;

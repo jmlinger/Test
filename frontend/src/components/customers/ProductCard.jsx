@@ -10,7 +10,7 @@ import {
   DivCard,
   Price,
   DivCardFooter,
-  DivCardButons,
+  DivCardButtons,
   ButtonAdd,
   ButtonRemove,
 } from '../../styles/cardsStyle/CardStyle';
@@ -76,7 +76,7 @@ export default function ProductCard(props) {
             {name}
           </p>
         </Price>
-        <DivCardButons>
+        <DivCardButtons>
           <ButtonRemove
             type="button"
             onClick={ removeProduct }
@@ -97,7 +97,7 @@ export default function ProductCard(props) {
           >
             +
           </ButtonAdd>
-        </DivCardButons>
+        </DivCardButtons>
       </DivCardFooter>
     </DivCard>
   );

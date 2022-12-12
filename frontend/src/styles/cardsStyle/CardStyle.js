@@ -59,7 +59,7 @@ export const DivCardFooter = styled.div`
   align-items: center;
 `;
 
-export const DivCardButons = styled.div`
+export const DivCardButtons = styled.div`
   input {
     text-align: center;
     font-weight: bolder;

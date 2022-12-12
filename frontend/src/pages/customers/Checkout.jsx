@@ -124,7 +124,7 @@ export default function Checkout() {
               disabled={Object.values(order).some((value) => !value) || productsSold.length === 0}
               data-testid="customer_checkout__button-submit-order"
               >
-              finalizar
+              Finalizar
             </button>
           </div>
         </AddressDiv>

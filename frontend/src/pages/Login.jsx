@@ -5,13 +5,13 @@ import { loginValidation } from '../utils/inputValidations';
 import { apiLogin } from '../services/apiCalls';
 import {
   InputsDiv,
-  LoguinDiv,
+  LoginDiv,
   Inputs,
   LogoDoApp,
-  DivButonsLoguin,
-  ButonsSend,
-  ButonsRegister,
-} from '../styles/login/Loguinstyles';
+  DivButtonsLogin,
+  ButtonsSend,
+  ButtonsRegister,
+} from '../styles/login/LoginStyles';
 
 export default function Login() {
   const [hiddenOn, setHiddenOn] = useState(true);
@@ -43,9 +43,13 @@ export default function Login() {
   }
 
   const setRedirectPath = (role) => {
-    if (role === 'administrator') return '/admin/manage';
-    if (role === 'seller') return '/seller/orders';
-    return '/customer/products';
+    const user = {
+      customer: '/customer/products',
+      seller: '/seller/orders',
+      admin: '/admin/manage',
+    }
+
+    return user[role];
   };
 
   const sendLogin = async () => {
@@ -61,7 +65,7 @@ export default function Login() {
   };
 
   return (
-      <LoguinDiv>
+      <LoginDiv>
         <InputsDiv transition={transition}>
           <LogoDoApp/>
           { connectionOn && <Redirect to={ setRedirectPath(connectionOn.role) } /> }
@@ -87,25 +91,25 @@ export default function Login() {
               Email ou senha inválido.
             </p>
           </div>
-          <DivButonsLoguin>
-            <ButonsSend
+          <DivButtonsLogin>
+            <ButtonsSend
               type="submit"
               disabled={ handleLoginValidation() }
               onClick={ () => sendLogin() }
               data-testid="common_login__button-login"
             >
               login
-            </ButonsSend>
+            </ButtonsSend>
             <Link to="/register">
-              <ButonsRegister
+              <ButtonsRegister
                 type="button"
                 data-testid="common_login__button-register"
               >
                 Ainda não tenho conta
-              </ButonsRegister>
+              </ButtonsRegister>
             </Link>
-          </DivButonsLoguin>
+          </DivButtonsLogin>
         </InputsDiv>
-      </LoguinDiv>
+      </LoginDiv>
   );
 }
