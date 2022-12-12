@@ -1,8 +1,16 @@
 require('dotenv').config();
 
-const { SQL_DIALECT, SQL_SSL, SQL_HOST, SQL_PORT, SQL_USER, SQL_PASSWORD, SQL_DB_NAME} = process.env;
+const {
+  NODE_ENV,
+  SQL_DIALECT,
+  SQL_SSL, SQL_HOST,
+  SQL_PORT,
+  SQL_USER,
+  SQL_PASSWORD,
+  SQL_DB_NAME
+} = process.env;
 
-const environment = process.env.NODE_ENV || "development";
+const environment = NODE_ENV || "development";
 
 const suffix = {
   prod: "",
@@ -14,7 +22,7 @@ const suffix = {
 
 const options = {
   dialect: SQL_DIALECT,
-  host: SQL_HOST,
+  host: SQL_HOST || 'localhost',
   port: SQL_PORT,
   username: SQL_USER,
   password: SQL_PASSWORD,
@@ -22,7 +30,7 @@ const options = {
   dialectOptions: {
     timezone: 'Z',
     ssl: {
-      require: SQL_SSL,
+      require: SQL_SSL || false,
       rejectUnauthorized: false
     }
   },
