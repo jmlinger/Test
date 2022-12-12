@@ -1,11 +1,11 @@
-const ENV = process.env.REACT_APP_NODE_ENV;
+const {NODE_ENV, BACK_URI, FRONT_URI} = process.env.NODE_ENV;
 
-const backUri = ENV === 'production' || ENV === 'prod'
-  ? "https://delivery-app-backend.up.railway.app/"
+const backUri = NODE_ENV === 'production' || NODE_ENV === 'prod'
+  ? BACK_URI
   : "http://localhost:3001/";
 
-const frontUri = ENV === 'production' || ENV === 'prod'
-  ? 'https://intreguedelivery.vercel.app/'
+const frontUri = NODE_ENV === 'production' || NODE_ENV === 'prod'
+  ? FRONT_URI
   : 'http://localhost:3000/';
 
 export {
