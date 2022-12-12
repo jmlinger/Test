@@ -1,8 +1,8 @@
 const { StatusCodes } = require('http-status-codes');
 
 const INVALID_ENTRIES = (message) => ({
-    status: StatusCodes.BAD_REQUEST,
-    message,
+  status: StatusCodes.BAD_REQUEST,
+  message,
 });
 
 const ALREADY_REGISTERED = {

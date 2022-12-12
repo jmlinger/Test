@@ -5,6 +5,5 @@ module.exports = async (req, res, _next) => {
 
   const result = await loginServices.login(user);
 
-  return res.status(result.status)
-  .json(result.message);
+  return res.status(result.status).json(result.message);
 };

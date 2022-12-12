@@ -1,9 +1,9 @@
 const { StatusCodes } = require('http-status-codes');
 const md5 = require('md5');
 const Models = require('../../database/models');
-const { INVALID_ENTRIES, USER_NOT_EXIST } = require('../../../utils/errorSet');
+const { INVALID_ENTRIES, USER_NOT_EXIST } = require('../../utils/errorSet');
 const { genToken } = require('../auth/auth');
-const { loginValidation } = require('../../../utils/validations/login');
+const { loginValidation } = require('../../utils/validations/login');
 
 module.exports = async (user) => {
   const validationError = loginValidation(user);
@@ -24,6 +24,5 @@ module.exports = async (user) => {
 
   delete findUserByEmail.password;
 
-  return { status: StatusCodes.OK,
-     message: { token, user: { ...findUserByEmail } } };
+  return { status: StatusCodes.OK, message: { token, user: { ...findUserByEmail } } };
 };
