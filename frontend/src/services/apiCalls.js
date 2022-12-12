@@ -152,9 +152,12 @@ const apiGetUsers = async () => {
 const apiRemoveUser = async (id) => {
   try {
     const { config } = globalApiVariables();
+
     const url = `${backUri}adminRegister/${id}`;
 
-    const fetchApi = await axios.post(url, config);
+    const noData = null;
+
+    const fetchApi = await axios.delete(url, config);
     const response = await fetchApi.data;
 
     return response;
