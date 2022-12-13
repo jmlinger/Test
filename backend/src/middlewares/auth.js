@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
     return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Expired or invalid token' });
   }
 
-  if (!req.baseUrl.includes(user.role === 'seller' ? 'customer' : user.role)) {
+  if (req.baseUrl.includes('admin') && user.role !== 'admin') {
     return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Unauthorized user' });
   }
 
