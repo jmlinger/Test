@@ -1,7 +1,4 @@
 const Models = require('../database/models');
-const { dateFormat } = require('../utils/dateFormat');
-
-const attributes = dateFormat('sale_date', 'saleDate');
 
 module.exports = (io) => io.on('connection', (socket) => {
   socket.on('changeStatus', async ({ userId, orderId, status }) => {
@@ -13,12 +10,12 @@ module.exports = (io) => io.on('connection', (socket) => {
     const getUserById = await Models.users.findByPk(userId);
 
     if (getUserById.role === 'customer') {
-      const updatedOrders = await Models.sales.findAll({ where: { userId }, attributes });
+      const updatedOrders = await Models.sales.findAll({ where: { userId } });
       io.emit('updatedOrders', updatedOrders);
     }
 
     if (getUserById.role === 'seller') {
-      const updatedOrders = await Models.sales.findAll({ where: { sellerId: userId }, attributes });
+      const updatedOrders = await Models.sales.findAll({ where: { sellerId: userId } });
       io.emit('updatedOrders', updatedOrders);
     }
   });
