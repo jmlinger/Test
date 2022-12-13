@@ -10,7 +10,6 @@ module.exports = async (orderId) => {
       { model: Models.products, as: 'products', through: { attributes: ['quantity'] } },
     ],
   });
-  console.log(getSalesById.saleDate.toString());
 
   return { status: StatusCodes.OK, message: getSalesById };
 };
