@@ -45,6 +45,9 @@ Aplicação desenvolvida como forma de critério avaliativo da escola de tecnolo
   <a href="https://socket.io/docs/v4/">
     <img src="https://img.shields.io/badge/Socket.io-339933?style=for-the-badge&logo=socket.io&color=black" /> 
   </a>
+  <a href="https://sequelize.org/">
+    <img src="http://jwt.io/img/logo-asset.svg" height="28px"/>
+  </a>
 </div>
 <br>
 
