@@ -53,7 +53,7 @@ Aplicação desenvolvida como forma de critério avaliativo da escola de tecnolo
 
 # A aplicação em nuvem
 
-Acesse a aplicação alocada no Vercel por <a href="https://delivery-app-five.vercel.app/"> aqui <a/>.
+Acesse a aplicação alocada no Vercel por <a href="https://intreguedelivery.vercel.app/login"> aqui <a/>.
 
 <br>  
 
