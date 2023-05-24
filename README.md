@@ -57,7 +57,7 @@ Acesse a aplicação alocada no Vercel por <a href="https://intreguedelivery.ver
 
 <br>  
 
-# Rodando a aplicação localmente
+# Executando a aplicação localmente
 ## Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -65,7 +65,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
-### Rodando o servidor Back-End
+### Rodando o Back-End
 
 ```bash
 # Clone este repositório com a chave SSH ou HTTP a depender de como seu git está configurado.
