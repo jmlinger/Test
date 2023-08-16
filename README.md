@@ -4,7 +4,7 @@
 # Descrição
 E-commerce para bebidas alcoólicas.
 
-Projeto fullstack desenvolvido em React e Node.js que apresenta funcionalidades para três tipos de usuário: administrador, vendedor e cliente.
+Este aplicativo full stack tem três tipos de usuário: cliente, vendedor e administrador. O cliente pode fazer pedidos e rastreá-los. O vendedor pode alterar o status do pedido e o administrador pode criar ou excluir usuários de qualquer tipo. Este aplicativo também possui um tema que alterna entre o modo claro ou escuro.
 
 Aplicação desenvolvida como forma de critério avaliativo da escola de tecnologia Trybe.
 <br><br>
