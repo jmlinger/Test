@@ -4,7 +4,7 @@
 # Descrição
 E-commerce para bebidas alcoólicas.
 
-Este aplicativo full stack tem três tipos de usuário: cliente, vendedor e administrador. O cliente pode fazer pedidos e rastreá-los. O vendedor pode alterar o status do pedido e o administrador pode criar ou excluir usuários de qualquer tipo. Este aplicativo também possui um tema que alterna entre o modo claro ou escuro.
+Esta aplicação web full stack conta com três tipos de usuário: cliente, vendedor e administrador. O cliente pode fazer pedidos e rastreá-los. O vendedor pode alterar o status do pedido e o administrador pode criar ou excluir usuários de qualquer tipo. Esta aplicação também possui um tema que alterna entre o modo claro e escuro.
 
 Aplicação desenvolvida como forma de critério avaliativo da escola de tecnologia Trybe.
 <br><br>
